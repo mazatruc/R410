@@ -1,0 +1,1 @@
+docker build -t sqlpy -f Dockerfile2 .
