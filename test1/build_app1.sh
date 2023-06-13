@@ -1,1 +1,1 @@
-docker build -t sqlpy -f Dockerfile2 .
+docker build -t app1 -f Dockerfile2 .
