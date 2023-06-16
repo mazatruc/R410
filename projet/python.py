@@ -13,7 +13,11 @@ mysql = MySQL(app)
 @app.route('/', methods = ['POST', 'GET'])
 def home():
 	if request.method == 'GET':
-		return "cheh"
+		return '/login'
 
 	if request.method == 'POST':
+		return "SUUUU"
 
+@app.route('/login')
+def login():
+	return "cheh"
