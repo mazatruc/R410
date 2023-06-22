@@ -30,38 +30,25 @@ connection = mysql.connector.connect(
     password="foo"
 )
 
-# Création de la base de données
-def create_database():
-    cursor = connection.cursor()
-
-    # Exécute la requête SQL pour créer la base de données
-    cursor.execute("CREATE DATABASE projetv1")
-
-    # Ferme le curseur
-    cursor.close()
-
 # Création de la table "meetings"
-def create_table():
+def database_projetv1():
     cursor = connection.cursor()
 
-    # Utilise la base de données
-    cursor.execute("USE projetv1")
+     cursor.execute("USE projetv1")
 
-    # Exécute la requête SQL pour créer la table "meetings"
-    cursor.execute("""
-        CREATE TABLE meetings (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            name VARCHAR(255) NOT NULL,
-            description VARCHAR(255)
-        )
-    """)
+'''# Exécute la requête SQL pour créer la table "meetings"
+cursor.execute("""
+CREATE TABLE meetings (
+id INT AUTO_INCREMENT PRIMARY KEY,
+Name VARCHAR(255) NOT NULL,
+description VARCHAR(255)
+    )
+""")'''
 
     # Ferme le curseur
-    cursor.close()
+cursor.close()
 
-# Appel des fonctions pour créer la base de données et la table
-create_database()
-create_table()
+database_projetv1()
 
 # Fermeture de la connexion à MySQL
 connection.close()
