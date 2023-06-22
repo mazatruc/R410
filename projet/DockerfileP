@@ -1,8 +1,10 @@
 FROM debian:11
+WORKDIR /app
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get -y install python3-pip
+RUN apt-get -y install python3-pip -y
 RUN apt-get -y install default-libmysqlclient-dev
-RUN pip install flask-mysqldb
-COPY apps.py apps.py
-COPY templates templates
-CMD flask --app apps run
+RUN apt install nano
+COPY ./pip/ ./
+RUN pip install -r requirement.txt
+COPY ./appP ./
+CMD ["uvicorn", "app:app", "--host", "127.0.0.1", "--port", "8000"]

@@ -5,10 +5,10 @@ FROM python:3.9
 WORKDIR /app
 
 # Copie le fichier requirements.txt dans le conteneur
-#COPY requirements.txt .
+.txt .
 
 # Installe les dépendances Python spécifiées dans requirements.txt
-#RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copie tous les fichiers du répertoire local dans le conteneur
 COPY . .
